@@ -25,28 +25,7 @@ const NewThrow = () => {
       // get image as response
       // display image
       const resp = await imageService.newImage()
-      const img = Buffer.from(resp).toString()
-      const i = new Image()
-      i.src = "data:image/png;base64," + img
-      if (i.complete) {
-        const canvas = canvasRef.current
-        if (!canvas) {
-          console.error("image complate but no canvas")
-          return
-        }
-        const context = canvas.getContext("2d")
-        context?.drawImage(i, 0, 0)
-      }
-      i.onload = () => {
-        const canvas = canvasRef.current
-        if (!canvas) {
-          console.error("no canvas")
-          return
-        }
-        const context = canvas.getContext("2d")
-        context?.drawImage(i, 0, 0)
-      }
-      console.log("img", img)
+      const img = "data:image/png;base64," + Buffer.from(resp).toString()
       setImgString(img)
   }
 
@@ -62,7 +41,7 @@ const NewThrow = () => {
           </ImageListItem>
           <ImageListItem key={0}>
               <img
-                src={"data:image/png;base64," + imgString}
+                src={imgString}
               />
 
             <canvas
