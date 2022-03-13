@@ -25,7 +25,7 @@ const NewThrow = () => {
       // get image as response
       // display image
       const resp = await imageService.newImage()
-      const img = "data:image/png;base64," + Buffer.from(resp).toString()
+      const img = "data:image/png;base64," + Buffer.from(resp).toString('base64')
       setImgString(img)
   }
 

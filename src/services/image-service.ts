@@ -13,7 +13,7 @@ export class ImageService {
    */
   public async newImage() {
     const url = [this.piUrl, this.newImageRoute].join("/");
-    const response = axios.get(url);
+    const response = axios.get(url, { responseType: "arraybuffer"});
     return response.then((resp) => resp.data);
   }
 }
