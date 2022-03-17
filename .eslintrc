@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "unused-imports",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "warn"
+    ],
+    "no-console": "warn",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "state"
+        ]
+      }
+    ],
+    // exception for Redux Toolkit state change
+    "react/jsx-props-no-spreading": "off",
+    "react/no-children-prop": "off",
+    // MUI Fix
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "unused-imports/no-unused-imports": "error",
+    "react/destructuring-assignment": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-ignore": "allow-with-description"
+      }
+    ],
+    "@typescript-eslint/no-use-before-define": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
+}

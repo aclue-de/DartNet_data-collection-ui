@@ -1,10 +1,11 @@
-import axios, { AxiosInstance } from "axios";
+import axios from "axios";
 
 export class ImageService {
   public readonly piUrl: string;
+
   private newImageRoute = "new-image";
 
-  constructor(piUrl: string, baseUrl = "") {
+  constructor(piUrl: string) {
     this.piUrl = piUrl;
   }
 
@@ -13,7 +14,7 @@ export class ImageService {
    */
   public async newImage() {
     const url = [this.piUrl, this.newImageRoute].join("/");
-    const response = axios.get(url, { responseType: "arraybuffer"});
+    const response = axios.get(url, { responseType: "arraybuffer" });
     return response.then((resp) => resp.data);
   }
 }
