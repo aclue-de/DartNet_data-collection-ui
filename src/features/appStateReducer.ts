@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export enum AppState {
   Init,
-  NewThrow,
+  NewThrow
 }
 
 export const { reducer: appStateReducer, actions: appStateActions } =
@@ -10,19 +10,19 @@ export const { reducer: appStateReducer, actions: appStateActions } =
     name: "appState",
     initialState: AppState.Init,
     reducers: {
-      nextState(state) {
+      nextState: (state) => {
         const next = state + 1;
         if (Object.values(AppState).includes(next)) {
           return next;
         }
         return state;
       },
-      previousState(state) {
+      previousState: (state) => {
         const previous = state - 1;
         if (Object.values(AppState).includes(previous)) {
           return previous;
         }
         return state;
-      },
-    },
+      }
+    }
   });

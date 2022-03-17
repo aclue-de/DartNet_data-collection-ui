@@ -1,10 +1,12 @@
-import { Box, Button, Container } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { Box, Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import { appStateActions } from "./appStateReducer";
 
 const Init = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   return (
     <Container maxWidth="sm">
@@ -13,14 +15,16 @@ const Init = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: "100vh",
+          minHeight: "100vh"
         }}
       >
         <Button
           variant="contained"
           size="large"
           startIcon={<AddIcon />}
-          onClick={() => appStateActions.nextState()}
+          onClick={() => {
+            dispatch(appStateActions.nextState());
+          }}
         >
           {t("newThrow")}
         </Button>
