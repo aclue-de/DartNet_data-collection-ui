@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export enum AppState {
   Init,
-  NewThrow
+  NewThrow,
+  ConfirmNewThrow,
 }
 
 export const { reducer: appStateReducer, actions: appStateActions } =
@@ -23,6 +24,6 @@ export const { reducer: appStateReducer, actions: appStateActions } =
           return previous;
         }
         return state;
-      }
+      },
     }
   });

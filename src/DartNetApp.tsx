@@ -1,5 +1,7 @@
 import Init from "./features/Init";
 import NewThrow from "./features/NewThrow";
+import ConfirmNewThrow from "./features/ConfirmNewThrow"
+
 import { useAppSelector } from "./appReducer";
 import { AppState } from "./features/appStateReducer";
 
@@ -10,6 +12,7 @@ const DartNetApp = () => {
     <>
       {appState === AppState.Init && <Init />}
       {appState === AppState.NewThrow && <NewThrow />}
+      {appState === AppState.ConfirmNewThrow && <ConfirmNewThrow />}
     </>
   );
 };
