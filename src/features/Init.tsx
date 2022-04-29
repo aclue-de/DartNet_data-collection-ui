@@ -2,7 +2,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box, Button, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { appStateActions } from "./appStateReducer";
+import { collectionNavigationStateActions } from "./collectionNavigationReducer";
 
 const Init = () => {
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ const Init = () => {
           size="large"
           startIcon={<AddIcon />}
           onClick={() => {
-            dispatch(appStateActions.nextState());
+            dispatch(collectionNavigationStateActions.nextState());
           }}
         >
           {t("newThrow")}

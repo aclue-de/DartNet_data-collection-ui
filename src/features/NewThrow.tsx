@@ -17,7 +17,7 @@ import { DartScoreSelector } from "../components/dart-score-selector"
 import { piUrl } from "../constants";
 import { ImageService } from "../services/image-service";
 import { newThrowSlice } from "./newThrowReducer"
-import { appStateActions } from "./appStateReducer"
+import { collectionNavigationStateActions } from "./collectionNavigationReducer"
 import { useAppSelector } from "./../appReducer";
 
 import { useDispatch, useStore } from "react-redux";
@@ -52,7 +52,7 @@ const NewThrow = () => {
     
     if (newThrowState.length === 2) {
       dispatch(newThrowSlice.actions.addThrow({score: score, imgString: currentImgString}))
-      dispatch(appStateActions.nextState())
+      dispatch(collectionNavigationStateActions.nextState())
     } else {
       console.log("next throw")
       dispatch(newThrowSlice.actions.addThrow({score: score, imgString: currentImgString}))
@@ -88,10 +88,10 @@ const NewThrow = () => {
         </div>
 
         <div hidden={ currentImgString === "" }>
-          <IconButton size="large" onClick={ nextState }>
+          <IconButton size="large" disabled={loading} onClick={ nextState }>
             <CheckIcon sx={{ fontSize: "2em" }}/>
           </IconButton>
-          <IconButton size="large" onClick={ captureImage }>
+          <IconButton size="large" disabled={loading} onClick={ captureImage }>
             <ReplayIcon sx={{ fontSize: "2em" }}/>
           </IconButton>
         </div>

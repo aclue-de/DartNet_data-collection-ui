@@ -1,10 +1,14 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { appStateReducer } from "./features/appStateReducer";
+import { collectionNavigationStateReducer } from "./features/collectionNavigationReducer";
+import { labellingNavigationStateReducer } from "./features/labellingNavigationReducer";
+import { appNavigationStateReducer } from "./features/appNavigationReducer";
 import { newThrowSlice } from "./features/newThrowReducer";
 
 export const appReducer = combineReducers({
-  appState: appStateReducer,
+  collectionNavigationState: collectionNavigationStateReducer,
+  labellingNavigationState: labellingNavigationStateReducer,
+  appNavigationState: appNavigationStateReducer,
   newThrowState: newThrowSlice.reducer
 });
 
