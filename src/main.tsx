@@ -7,8 +7,10 @@ import { appReducer } from "./appReducer";
 import DartNetApp from "./DartNetApp";
 import i18n from "./i18n";
 import "./index.css";
+import { createMockServer } from "./testData/LabelApiMock";
 import * as ReactDOMClient from "react-dom/client";
 
+createMockServer();
 const theme = createTheme({
   palette: {
     mode: "dark",
