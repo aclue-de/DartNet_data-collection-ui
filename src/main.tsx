@@ -7,6 +7,7 @@ import { appReducer } from "./appReducer";
 import DartNetApp from "./DartNetApp";
 import i18n from "./i18n";
 import "./index.css";
+import { labelingApi } from "./features/labeling/labelingApiSlice";
 import { createMockServer } from "./testData/LabelApiMock";
 import * as ReactDOMClient from "react-dom/client";
 
@@ -20,6 +21,8 @@ const theme = createTheme({
 // Store
 const store = configureStore({
   reducer: appReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(labelingApi.middleware),
 });
 
 const container = document.getElementById("root");

@@ -4,12 +4,14 @@ import { collectionNavigationStateReducer } from "./features/collectionNavigatio
 import { labellingNavigationStateReducer } from "./features/labellingNavigationReducer";
 import { appNavigationStateReducer } from "./features/appNavigationReducer";
 import { newThrowSlice } from "./features/newThrowReducer";
+import { labelingApi } from "./features/labeling/labelingApiSlice";
 
 export const appReducer = combineReducers({
   collectionNavigationState: collectionNavigationStateReducer,
   labellingNavigationState: labellingNavigationStateReducer,
   appNavigationState: appNavigationStateReducer,
-  newThrowState: newThrowSlice.reducer
+  newThrowState: newThrowSlice.reducer,
+  [labelingApi.reducerPath]: labelingApi.reducer,
 });
 
 export type AppReducerState = ReturnType<typeof appReducer>;
