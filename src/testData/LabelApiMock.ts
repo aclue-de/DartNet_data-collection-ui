@@ -51,7 +51,7 @@ export const createMockServer = () =>
       `${LABELING_SERVICE_ROUTES.serverUrl}${LABELING_SERVICE_ROUTES.postThrowSequenceImageLabels.serverRoute}`,
       async (request) => {
         await sleep(300);
-        const throwSequenceId = parseInt(request.params.id as string);
+        const throwSequenceId = parseInt(request.params.throwSequenceId as string);
         if (!throwSequenceId && throwSequenceId !== 0) {
           return [404, {}, "Labels could not be saved as ThrowSequence was not found."];
         }

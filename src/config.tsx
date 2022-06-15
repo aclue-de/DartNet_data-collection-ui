@@ -15,15 +15,15 @@ export const LABELING_SERVICE_ROUTES: ILabelingServiceRoutes = {
   postThrowSequenceImageLabels: {
     httpType: "post",
     contentType: ContentType.JSON,
-    clientRoute: `/api/throwSequences/`,
-    serverRoute: `/api/throwSequences/:id`,
+    clientRoute: `/api/throwSequences/labels/`,
+    serverRoute: `/api/throwSequences/labels/:throwSequenceId`,
   },
   // Todo Add Button to ThrowSequenceLabeling & endpoint to LabelApiMock
   deleteThrowSequence: {
     httpType: "delete",
     contentType: ContentType.JSON,
     clientRoute: `/api/throwSequences/`,
-    serverRoute: `/api/throwSequences/:id`,
+    serverRoute: `/api/throwSequences/:throwSequenceId`,
   },
 };
 
