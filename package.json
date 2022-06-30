@@ -10,6 +10,9 @@
     "lint:fix": "eslint --ext ts,tsx --fix src"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.118.1",
+    "@aws-sdk/lib-dynamodb": "^3.118.1",
+    "@aws-sdk/util-dynamodb": "^3.118.1",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.0",
@@ -17,8 +20,10 @@
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^0.26.1",
     "buffer": "^6.0.3",
+    "dotenv": "^16.0.1",
     "i18next": "^21.6.6",
     "konva": "^8.3.9",
+    "mysql": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-i18next": "^11.15.3",
@@ -28,6 +33,8 @@
     "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
+    "@types/mysql": "^2.15.21",
+    "@types/node": "^18.0.0",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
     "@types/react-reconciler": "^0.28.0",
@@ -47,7 +54,8 @@
     "pretender": "^3.4.7",
     "prettier": "^2.2.1",
     "typescript": "^4.4.4",
-    "vite": "^2.7.2"
+    "vite": "^2.7.2",
+    "vite-plugin-mix": "^0.3.1"
   },
   "resolutions": {
     "@types/react": "^18.0.12"
