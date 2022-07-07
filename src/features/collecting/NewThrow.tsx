@@ -12,13 +12,13 @@ import CheckIcon from '@mui/icons-material/Check';
 import ReplayIcon from '@mui/icons-material/Replay';
 import { Buffer } from "buffer";
 
-import { DartScoreSelector } from "../components/dart-score-selector"
+import { DartScoreSelector } from "../../components/dart-score-selector"
 
-import { piUrl } from "../constants";
-import { ImageService } from "../services/image-service";
-import { newThrowSlice } from "./newThrowReducer"
-import { collectionNavigationStateActions } from "./collectionNavigationReducer"
-import { useAppSelector } from "./../appReducer";
+import { piUrl } from "../../constants";
+import { ImageService } from "../../services/image-service";
+import { newThrowSlice } from "../newThrowReducer"
+import { collectionNavigationStateActions } from "../collectionNavigationReducer"
+import { useAppSelector } from "../../appReducer";
 
 import { useDispatch, useStore } from "react-redux";
 

@@ -1,7 +1,7 @@
-import Init from "./features/Init";
+import Init from "./features/collecting/Init";
 import ThrowSequenceLabeling from "./features/labeling/ThrowSequenceLabeling";
-import NewThrow from "./features/NewThrow";
-import ConfirmNewThrow from "./features/ConfirmNewThrow"
+import NewThrow from "./features/collecting/NewThrow";
+import ConfirmNewThrow from "./features/collecting/ConfirmNewThrow"
 
 import { useAppSelector } from "./appReducer";
 import { CollectionNavigationState, collectionNavigationStateActions } from "./features/collectionNavigationReducer";
@@ -48,7 +48,8 @@ const DartNetApp = () => {
       { appNavigationState === "collection" && collectionNavigationState === CollectionNavigationState.Init && <Init />}
       { appNavigationState === "collection" && collectionNavigationState === CollectionNavigationState.NewThrow && <NewThrow />}
       { appNavigationState === "collection" && collectionNavigationState === CollectionNavigationState.ConfirmNewThrow && <ConfirmNewThrow />}
-      { appNavigationState === "labelling" && labellingNavigationState === LabellingNavigationState.Init && <ThrowSequenceLabeling />}
+      { appNavigationState === "labelling" && labellingNavigationState === LabellingNavigationState.Overview && <ThrowSequenceLabeling />}
+      { appNavigationState === "labelling" && labellingNavigationState === LabellingNavigationState.Labelling && <ThrowSequenceLabeling />}
     </>
     </>
   );

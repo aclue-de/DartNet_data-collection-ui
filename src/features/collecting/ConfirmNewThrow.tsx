@@ -2,8 +2,8 @@ import { Button, Box, Container, ImageListItem, ImageListItemBar, Stack, ButtonG
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import CancelIcon from '@mui/icons-material/Cancel';
 
-import ConfirmDialog from "../components/confirm-dialog"
-import { useAppSelector } from "../appReducer";
+import ConfirmDialog from "../../components/confirm-dialog"
+import { useAppSelector } from "../../appReducer";
 import { useState } from "react";
 
 const ConfirmNewThrow = () => {

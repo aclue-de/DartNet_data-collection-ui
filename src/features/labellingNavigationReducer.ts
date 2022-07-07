@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export enum LabellingNavigationState {
-  Init
+  Overview,
+  Labelling
 }
 
 export const { reducer: labellingNavigationStateReducer, actions: labellingNavigationStateActions } =
   createSlice({
     name: "labellingNavigationState",
-    initialState: LabellingNavigationState.Init,
+    initialState: LabellingNavigationState.Overview,
     reducers: {
       nextState: (state) => {
         const next = state + 1;
@@ -24,7 +25,7 @@ export const { reducer: labellingNavigationStateReducer, actions: labellingNavig
         return state;
       },
       resetState: (_) => {
-        return LabellingNavigationState.Init;
+        return LabellingNavigationState.Overview;
       },
     }
   });
